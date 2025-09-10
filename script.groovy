@@ -11,7 +11,7 @@ def pushImage() {
 def deployCompose() {
     echo "Deploying with Docker Compose..."
     sh """
-        docker run -d --name nginx -p 80:80 nginx:latest
+        docker rm -f nginx 2>/dev/null || true && docker run -d --name nginx -p 80:80 nginx:latest
     """
     
 }
