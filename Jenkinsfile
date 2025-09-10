@@ -6,7 +6,7 @@ pipeline {
 
     environment {
         ImageRegistry = 'oluwaseuna'
-        EC2_IP = '34.247.173.221'
+        EC2_IP = 'domrey.com'
         DockerComposeFile = 'docker-compose.yml'
         DotEnvFile = '.env'
     }
