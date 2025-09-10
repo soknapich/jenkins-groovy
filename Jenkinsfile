@@ -43,5 +43,14 @@ pipeline {
                 }
             }
         }
+
+        stage("TestSShToDomrey") {
+            steps {
+                script {
+                    gv.sshToDomrey()
+                }
+            }
+        }
+        
     }
 }
