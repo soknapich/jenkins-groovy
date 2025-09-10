@@ -16,14 +16,15 @@ def deployCompose() {
 }
 
 def sshToDomrey(){
-    withCredentials([usernamePassword(credentialsId: 'my-ssh-server', 
-                                     usernameVariable: 'SSH_USER', 
-                                     passwordVariable: 'SSH_PASS')]) {
-        sh '''
-            sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no $SSH_USER@domrey.com "hostname && whoami"
-            sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no script.groovy $SSH_USER@domrey.com:/home/$SSH_USER/
-        '''
-    }
+     echo "SSh to domrey..."
+    // withCredentials([usernamePassword(credentialsId: 'my-ssh-server', 
+    //                                  usernameVariable: 'SSH_USER', 
+    //                                  passwordVariable: 'SSH_PASS')]) {
+    //     sh '''
+    //         sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no $SSH_USER@domrey.com "hostname && whoami"
+    //         sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no script.groovy $SSH_USER@domrey.com:/home/$SSH_USER/
+    //     '''
+    // }
 
     // sshagent(['ssh-ec2']) {
     // sh '''
