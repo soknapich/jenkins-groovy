@@ -20,7 +20,7 @@ def sshToDomrey(){
                                      usernameVariable: 'SSH_USER', 
                                      passwordVariable: 'SSH_PASS')]) {
         sh '''
-            sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no $SSH_USER@ydomrey.com "hostname && whoami"
+            sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no $SSH_USER@domrey.com "hostname && whoami"
             sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no scrip.groovy $SSH_USER@domrey.com:/home/$SSH_USER/
         '''
     }
